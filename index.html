@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>제6회 한동 BK21 인공지능 워크샵 · ICC Jeju</title>
+<meta name="description" content="제6회 한동 BK21 인공지능 워크샵 — 2026. 6. 24. 제주국제컨벤션센터" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ocean:#0487d9;       /* 제주 바다 */
+    --ocean-2:#057ba8;
+    --tangerine:#3E4E5B;   /* 한라봉/감귤 */
+    --tangerine-2:#3E4E5B;
+    --basalt:#2c3038;      /* 현무암 */
+    --sand:#fafaf8;        /* 모래 배경 */
+    --leaf:#2fae8f;        /* 야자/녹차 */
+    --ink:#2c3038;
+    --muted:#7b828d;
+    --line:#ececec;
+    --white:#ffffff;
+    --maxw:1040px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Noto Sans KR",system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--sand);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-weight:700;line-height:1.3;margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  /* ---------- Language toggle ---------- */
+  .langbar{
+    position:fixed;top:18px;right:18px;z-index:50;
+    display:flex;background:rgba(255,255,255,.9);
+    backdrop-filter:blur(6px);
+    border-radius:999px;padding:4px;
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+  }
+  .langbar button{
+    border:0;background:transparent;cursor:pointer;
+    font-family:inherit;font-weight:500;font-size:13px;
+    padding:6px 14px;border-radius:999px;color:var(--muted);
+    transition:.2s;
+  }
+  .langbar button.active{background:var(--tangerine);color:#fff;}
+
+  /* ---------- Hero ---------- */
+  header.hgu-bk-icon{
+    position:relative;overflow:hidden;
+    background:#0195da;
+    color:#fff;text-align:center;
+    padding:90px 0 0;
+  }
+  .hgu-bk-icon .kicker{
+    font-size:13px;letter-spacing:.28em;text-transform:uppercase;
+    font-weight:500;opacity:.92;margin-bottom:18px;
+  }
+  .hgu-bk-icon h1{
+    font-size:clamp(28px,5vw,52px);font-weight:900;
+    letter-spacing:-.01em;margin-bottom:18px;
+  }
+  .hgu-bk-icon .meta{
+    font-size:clamp(15px,2.2vw,19px);font-weight:300;opacity:.95;
+  }
+  .hgu-bk-icon .meta strong{font-weight:700;}
+  .hgu-bk-icon .host{
+    margin-top:14px;font-size:14px;opacity:.85;font-weight:300;
+  }
+  .hgu-bk-icon-illu{
+    margin-top:-50px;
+    display:flex;align-items:flex-end;justify-content:center;
+  }
+  .hgu-bk-icon-img{
+    width:100%;max-width:620px;height:auto;display:block;
+  }
+  /* placeholder for hgu-bk-icon illustration */
+  .img-ph{
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:13px;letter-spacing:.08em;
+    background:
+      repeating-linear-gradient(45deg,rgba(0,0,0,.025) 0 12px,transparent 12px 24px),
+      #f1ece3;
+    border:1px dashed #c9cdd4;border-radius:14px;
+    text-align:center;
+  }
+  .hgu-bk-icon-illu .img-ph{
+    width:100%;max-width:760px;height:100%;
+    background:
+      repeating-linear-gradient(45deg,rgba(255,255,255,.10) 0 14px,transparent 14px 28px),
+      rgba(255,255,255,.12);
+    border:1px dashed rgba(255,255,255,.6);
+    color:rgba(255,255,255,.9);border-radius:14px 14px 0 0;
+  }
+  .wave{display:block;width:100%;height:60px;margin-top:-1px;}
+
+  /* ---------- Section frame ---------- */
+  section{padding:72px 0;}
+  .sec-head{margin-bottom:38px;}
+  .sec-head .tag{
+    display:inline-block;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--tangerine-2);font-weight:700;
+    margin-bottom:10px;
+  }
+  .sec-head h2{font-size:clamp(24px,3.4vw,34px);}
+  .sec-head p.lead{
+    color:var(--muted);margin-top:14px;max-width:680px;font-size:16px;
+  }
+
+  /* ---------- Intro / invitation ---------- */
+  .invite{
+    background:var(--white);border-radius:18px;
+    padding:40px 38px;box-shadow:0 10px 30px rgba(20,40,60,.05);
+    font-size:16px;color:#444;
+  }
+  .invite p{margin:0 0 16px;}
+  .invite p:last-child{margin-bottom:0;}
+  .invite p.greet{font-family:"Gowun Batang",serif;font-style:italic;color:var(--ocean-2);font-size:17px;}
+  .invite .sign{margin-top:24px;font-weight:500;color:var(--ink);}
+
+  /* ---------- Organization (people grid) ---------- */
+  .role-head{
+    text-align:center;font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ink);font-weight:700;margin:0 0 30px;
+  }
+  .role-group{margin-bottom:48px;}
+  .role-group:last-child{margin-bottom:0;}
+  .people{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,220px));
+    gap:34px 18px;justify-content:center;
+  }
+  .person{text-align:center;}
+  .person .avatar{
+    width:150px;height:170px;border-radius:30%;
+    object-fit:cover;object-position:center 50%;
+    margin:0 auto 16px;background:#eef0ee;
+    border:5px solid #fff;box-shadow:0 4px 16px rgba(0,0,0,.08);
+  }
+  .person .pname{font-weight:700;color:var(--tangerine-2);font-size:17px;}
+  .person .paffil{color:var(--muted);font-size:14px;margin-top:4px;line-height:1.45;}
+  .host-line{
+    text-align:center;margin-top:44px;color:var(--muted);font-size:14px;
+  }
+  .host-line strong{color:var(--ink);font-weight:500;}
+
+  /* ---------- Schedule table ---------- */
+  .sched{
+    background:var(--white);border-radius:16px;overflow:hidden;
+    border:1px solid var(--line);
+  }
+  table{width:100%;border-collapse:collapse;}
+  thead th{
+    background:var(--basalt);color:#fff;font-weight:500;
+    font-size:13px;letter-spacing:.05em;padding:14px 18px;text-align:left;
+  }
+  tbody td{padding:16px 18px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top;}
+  tbody tr:last-child td{border-bottom:0;}
+  td.time{white-space:nowrap;color:var(--ocean-2);font-weight:500;width:120px;}
+  td.title{font-weight:500;color:var(--ink);}
+  td.title small{display:block;font-weight:300;color:var(--muted);font-size:13.5px;margin-top:4px;}
+  td.speaker{color:var(--muted);width:230px;line-height:1.6;}
+  td.speaker small{color:var(--muted);font-size:12.5px;}
+  td.speaker br{margin-bottom:6px;content:"";display:block;}
+  tr.break td{background:#fff6ec;color:var(--tangerine-2);font-weight:500;text-align:center;}
+  tr.cere td{background:#f4faff;}
+
+  /* ---------- Abstracts / speakers ---------- */
+  .talk{
+    display:grid;grid-template-columns:200px 1fr;gap:30px;
+    background:var(--white);border-radius:16px;
+    padding:30px;margin-bottom:22px;border:1px solid var(--line);
+    align-items:start;
+  }
+  .talk.tbd{opacity:.92;}
+  .talk .photo{width:100%;aspect-ratio:3/4;border-radius:12px;object-fit:cover;object-position:top center;background:#f1ece3;}
+  .talk .photo.img-ph{font-size:12px;}
+  .talk .badge{
+    display:inline-block;font-size:11px;letter-spacing:.12em;font-weight:700;
+    text-transform:uppercase;color:#fff;background:var(--ocean);
+    padding:4px 10px;border-radius:999px;margin-bottom:12px;
+  }
+  .talk .badge.key{background:var(--tangerine-2);}
+  .talk .who{margin-bottom:16px;}
+  .talk .who .name{font-size:19px;font-weight:700;}
+  .talk .who .affil{color:var(--tangerine-2);font-size:14px;font-weight:500;margin-top:2px;}
+  .talk .who .ttitle{color:var(--ink);font-size:16px;font-weight:500;margin-top:10px;}
+  .talk .block{margin-top:14px;}
+  .talk .block .label{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:700;color:var(--muted);margin-bottom:4px;
+  }
+  .talk .block p{margin:0;font-size:14.5px;color:#4a4f57;}
+  .talk .tbd-note{color:var(--muted);font-style:italic;font-size:14.5px;}
+
+  /* ---------- Venue ---------- */
+  .venue{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
+  .venue .map.img-ph{height:300px;}
+  .venue .photo{width:100%;height:320px;object-fit:cover;border-radius:16px;
+    box-shadow:0 10px 30px rgba(20,40,60,.12);}
+  .venue .vlogo{height:40px;width:auto;margin-bottom:14px;}
+  .venue h3{font-size:22px;margin-bottom:14px;}
+  .venue p{color:#4a4f57;margin:0 0 10px;}
+  .venue .addr{font-weight:500;color:var(--ink);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--basalt);color:#cfd3da;text-align:center;
+    padding:48px 0;font-size:14px;font-weight:300;
+  }
+  footer .ft-title{color:#fff;font-weight:700;font-size:16px;margin-bottom:8px;}
+  footer a{color:var(--tangerine);text-decoration:none;}
+
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;
+    background:var(--tangerine);margin-right:8px;vertical-align:middle;}
+
+  [data-lang-en]{display:none;}
+  html[data-lang="en"] [data-lang-ko]{display:none;}
+  html[data-lang="en"] [data-lang-en]{display:revert;}
+
+  @media(max-width:760px){
+    .talk{grid-template-columns:1fr;}
+    .talk .photo{max-width:200px;}
+    .venue{grid-template-columns:1fr;}
+    section{padding:54px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Language toggle -->
+<div class="langbar" role="group" aria-label="Language">
+  <button id="btn-ko" class="active" onclick="setLang('ko')">한국어</button>
+  <button id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hgu-bk-icon">
+  <div class="wrap">
+    <div class="kicker" data-lang-ko>Handong BK21 · 인공지능 워크샵</div>
+    <div class="kicker" data-lang-en>Handong BK21 · AI Workshop</div>
+
+    <h1 data-lang-ko>제6회 한동 BK21 인공지능 워크샵</h1>
+    <h1 data-lang-en>The 6th Handong BK21 AI Workshop</h1>
+
+    <div class="meta" data-lang-ko>
+      <strong>2026. 6. 24. (수) 13:00 ~ 16:00</strong> · 제주국제컨벤션센터(ICC Jeju) 301B호
+    </div>
+    <div class="meta" data-lang-en>
+      <strong>Wed, June 24, 2026 · 13:00 – 16:00</strong> · ICC Jeju, Room 301B
+    </div>
+
+    <div class="host" data-lang-ko>주관 · 한동대학교 BK21 인공지능사업단</div>
+    <div class="host" data-lang-en>Hosted by Handong Global University BK21 AI Education &amp; Research Group</div>
+
+    <!-- hgu-bk-icon 일러스트 (제주 풍경) -->
+    <div class="hgu-bk-icon-illu">
+      <img class="hgu-bk-icon-img" src="figure/hgu-bk21-icon.png" alt="제주 일러스트 — 돌하르방과 한라산" />
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,30 C240,60 480,0 720,20 C960,40 1200,60 1440,30 L1440,60 L0,60 Z" fill="#fafaf8"/>
+  </svg>
+</header>
+
+<!-- ============ 초대의 말씀 ============ -->
+<section id="invite">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-lang-ko>초대의 말씀 · 프로그램 소개</span>
+      <span class="tag" data-lang-en>Invitation</span>
+      <h2 data-lang-ko>제주에서 열리는 인공지능의 만남</h2>
+      <h2 data-lang-en>An AI Gathering on Jeju Island</h2>
+    </div>
+
+    <div class="invite">
+      <div data-lang-ko>
+        <p class="greet">제6회 한동대 BK21 인공지능 워크샵에 여러분을 초대합니다.</p>
+        <p>인공지능은 이미 우리 사회 전반의 혁신을 이끄는 핵심 기술로 자리 잡았으며, 최근에는 추론 능력을 갖춘 거대언어모델(Large Language Models, LLMs), 자율적으로 과업을 수행하는 Agentic AI, 그리고 물리 세계와 상호작용하는 Physical AI로 그 지평을 빠르게 넓혀가고 있습니다.</p>
+        <p>이러한 흐름 속에서 한동대 BK21 AI 혁신인재 양성사업단은 협력 기업 및 대학의 연구자분들, 그리고 학생 여러분께 AI의 최신 기술 동향과 산업계 활용 사례를 함께 나누고자 본 워크샵을 마련하였습니다. 본 워크샵에서는 한동대 BK21 AI 혁신인재 양성사업단 소속 교수님들께서 사업단을 통해 수행해 온 AI 연구 성과와 주요 기술 동향을 소개해 드리고, 이어서 선도 연구자 초청 강연과 산업계 리더 특강을 통해 학계와 산업 현장의 생생한 통찰을 함께 나누는 자리를 마련하였습니다.</p>
+        <p>참석하시는 모든 분들께 의미 있고 유익한 시간이 되리라 확신하며, 학계 및 산업계의 AI 연구자와 대학·대학원생 여러분의 많은 참여를 진심으로 바랍니다.</p>
+        <p class="sign">— 한동대학교 BK21 인공지능사업단</p>
+      </div>
+      <div data-lang-en>
+        <p class="greet">We invite you to the 6th Handong BK21 AI Workshop.</p>
+        <p>Artificial intelligence has firmly established itself as a core technology driving innovation across society, and its frontiers are rapidly expanding — toward Large Language Models (LLMs) with reasoning capabilities, Agentic AI that autonomously carries out tasks, and Physical AI that interacts with the physical world.</p>
+        <p>Amid these developments, the Handong BK21 AI Innovative Talent Education &amp; Research Group has prepared this workshop to share the latest technological trends and industry use cases of AI with researchers from partner companies and universities, and with students. Professors of the group will first present the AI research achievements and major technological trends they have pursued through the program, followed by an invited keynote from a leading researcher and tech talks offering vivid insights from both academia and industry.</p>
+        <p>We are confident this will be a meaningful and rewarding time for everyone, and we sincerely welcome the participation of AI researchers in academia and industry, as well as undergraduate and graduate students.</p>
+        <p class="sign">— Handong Global University BK21 AI Education &amp; Research Group</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 조직 ============ -->
+<section id="org" style="background:#f4efe6;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-lang-ko>조직</span>
+      <span class="tag" data-lang-en>Organization</span>
+      <h2 data-lang-ko>워크샵 조직위원회</h2>
+      <h2 data-lang-en>Organizing Committee</h2>
+    </div>
+
+    <!-- 조직위원장 -->
+    <div class="role-group">
+      <h3 class="role-head" data-lang-ko>조직위원장</h3>
+      <h3 class="role-head" data-lang-en>Chair</h3>
+      <div class="people">
+        <div class="person">
+          <img class="avatar" src="figure/prof_HY-Choi.png" alt="최희열 / Heeyoul Choi" />
+          <div class="pname" data-lang-ko>최희열</div>
+          <div class="pname" data-lang-en>Heeyoul Choi</div>
+          <div class="paffil" data-lang-ko>한동대학교</div>
+          <div class="paffil" data-lang-en>Handong Global University</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 프로그램위원 -->
+    <div class="role-group">
+      <h3 class="role-head" data-lang-ko>프로그램위원</h3>
+      <h3 class="role-head" data-lang-en>Program Committee</h3>
+      <div class="people">
+        <div class="person">
+          <img class="avatar" src="figure/prof_MK-Ahn.png" alt="안민규 / Minkyu Ahn" />
+          <div class="pname" data-lang-ko>안민규</div>
+          <div class="pname" data-lang-en>Minkyu Ahn</div>
+          <div class="paffil" data-lang-ko>한동대학교</div>
+          <div class="paffil" data-lang-en>Handong Global University</div>
+        </div>
+        <div class="person">
+          <img class="avatar" src="figure/prof_CG-Hong.png" alt="홍참길 / Charmgil Hong" />
+          <div class="pname" data-lang-ko>홍참길</div>
+          <div class="pname" data-lang-en>Charmgil Hong</div>
+          <div class="paffil" data-lang-ko>한동대학교</div>
+          <div class="paffil" data-lang-en>Handong Global University</div>
+        </div>
+        <div class="person">
+          <img class="avatar" src="figure/prof_KH-Na.png" alt="나기현 / Kihyun Na" />
+          <div class="pname" data-lang-ko>나기현</div>
+          <div class="pname" data-lang-en>Kihyun Na</div>
+          <div class="paffil" data-lang-ko>한동대학교</div>
+          <div class="paffil" data-lang-en>Handong Global University</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="host-line">
+      <span data-lang-ko>주관 · <strong>한동대학교 BK21 인공지능사업단</strong></span>
+      <span data-lang-en>Hosted by <strong>Handong BK21 AI Education &amp; Research Group</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 프로그램 (시간표) ============ -->
+<section id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-lang-ko>프로그램</span>
+      <span class="tag" data-lang-en>Program</span>
+      <h2 data-lang-ko>워크샵 시간표</h2>
+      <h2 data-lang-en>Schedule</h2>
+      <p class="lead" data-lang-ko>2026. 6. 24. (수) 13:00 ~ 16:00 · 제주국제컨벤션센터(ICC Jeju) 301B호</p>
+      <p class="lead" data-lang-en>Wed, June 24, 2026 · 13:00 – 16:00 · ICC Jeju, Room 301B</p>
+    </div>
+
+    <div class="sched">
+      <table>
+        <thead>
+          <tr>
+            <th data-lang-ko>시간</th><th data-lang-en>Time</th>
+            <th data-lang-ko>발표 제목</th><th data-lang-en>Title</th>
+            <th data-lang-ko>발표자</th><th data-lang-en>Speaker</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cere">
+            <td class="time">13:00 – 13:10</td>
+            <td class="title" data-lang-ko>개회사</td>
+            <td class="title" data-lang-en>Opening Remarks</td>
+            <td class="speaker"></td>
+          </tr>
+          <tr>
+            <td class="time">13:10 – 14:00</td>
+            <td class="title" data-lang-ko>기조 강연: AI for Complex Networks: With a Focus on Hypergraphs</td>
+            <td class="title" data-lang-en>Keynote: AI for Complex Networks: With a Focus on Hypergraphs</td>
+            <td class="speaker" data-lang-ko>신기정 교수 <small>KAIST</small></td>
+            <td class="speaker" data-lang-en>Prof. Kijung Shin <small>KAIST</small></td>
+          </tr>
+          <tr class="break">
+            <td class="time">14:00 – 14:10</td>
+            <td colspan="2" data-lang-ko>휴식</td>
+            <td colspan="2" data-lang-en>Break</td>
+          </tr>
+          <tr>
+            <td class="time">14:10 – 14:50</td>
+            <td class="title">
+              <span data-lang-ko>Tech Talks Session 1</span><span data-lang-en>Tech Talks Session 1</span>
+              <small>Talk 1 — <span data-lang-ko>(발표 제목 추후 공지)</span><span data-lang-en>(title TBA)</span></small>
+              <small>Talk 2 — Advancing Multimodal Medical AI through Global Research Collaboration</small>
+            </td>
+            <td class="speaker" data-lang-ko>나기현 박사 <small>한동대학교</small><br>홍참길 교수 <small>한동대학교</small></td>
+            <td class="speaker" data-lang-en>Dr. Kihyun Na <small>Handong</small><br>Prof. Charmgil Hong <small>Handong</small></td>
+          </tr>
+          <tr class="break">
+            <td class="time">14:50 – 15:10</td>
+            <td colspan="2" data-lang-ko>휴식</td>
+            <td colspan="2" data-lang-en>Break</td>
+          </tr>
+          <tr>
+            <td class="time">15:10 – 16:00</td>
+            <td class="title">
+              <span data-lang-ko>Tech Talks Session 2</span><span data-lang-en>Tech Talks Session 2</span>
+              <small>Talk 1 — <span data-lang-ko>(발표 제목 추후 공지)</span><span data-lang-en>(title TBA)</span></small>
+              <small>Talk 2 — <span data-lang-ko>(발표 제목 추후 공지)</span><span data-lang-en>(title TBA)</span></small>
+            </td>
+            <td class="speaker" data-lang-ko>김동근 교수 <small>한동대학교</small><br>최희열 교수 <small>한동대학교</small></td>
+            <td class="speaker" data-lang-en>Prof. Dongkeun Kim <small>Handong</small><br>Prof. Heeyoul Choi <small>Handong</small></td>
+          </tr>
+          <tr class="cere">
+            <td class="time">16:00</td>
+            <td class="title" data-lang-ko>폐회사</td>
+            <td class="title" data-lang-en>Closing Remarks</td>
+            <td class="speaker"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 발표 초록 / 발표자 ============ -->
+<section id="talks" style="background:#f4efe6;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-lang-ko>발표 초록</span>
+      <span class="tag" data-lang-en>Abstracts</span>
+      <h2 data-lang-ko>발표 및 연사 소개</h2>
+      <h2 data-lang-en>Talks &amp; Speakers</h2>
+    </div>
+
+    <!-- Keynote: 신기정 -->
+    <article class="talk">
+      <img class="photo" src="figure/prof_KJ-Shin.png" alt="신기정 교수 / Prof. Kijung Shin" />
+      <div>
+        <span class="badge key" data-lang-ko>기조 강연</span>
+        <span class="badge key" data-lang-en>Keynote</span>
+        <div class="who">
+          <div class="name" data-lang-ko>신기정 교수</div>
+          <div class="name" data-lang-en>Prof. Kijung Shin</div>
+          <div class="affil">KAIST</div>
+          <div class="ttitle">AI for Complex Networks: With a Focus on Hypergraphs</div>
+        </div>
+        <div class="block">
+          <div class="label">Talk Overview</div>
+          <p>AI for complex networks supports a wide range of applications, including web search, recommendation, advertising, and fraud detection, across the web, online social networks, and e-commerce platforms. However, it also poses unique challenges due to the massive scale but limited number of such networks, as well as their structural properties, such as permutation invariance. In this seminar, I will present our recent research on AI for complex networks, focusing on hypergraphs that represent interconnected group interactions. The seminar will cover embedding, generation, and modeling of large-scale group interactions. I will also briefly discuss broader directions, including complex networks for AI and AI for complex systems beyond networks.</p>
+        </div>
+        <div class="block">
+          <div class="label">Bio</div>
+          <p>Kijung Shin is an Associate Professor in the Kim Jaechul Graduate School of AI at KAIST. He received his Ph.D. in Computer Science from Carnegie Mellon University in 2019 and his B.Eng. in Computer Science and Engineering from Seoul National University in 2015. His primary research interests include complex networks, graph algorithms, and data mining. He has published more than 100 peer-reviewed papers in top-tier AI and data-related venues, and his work has been recognized with the IEEE ICDM Best Paper Award in 2025, the IEEE ICDM Best Student Paper Runner-up Award in 2023, and the ACM SIGKDD Best Research Paper Award in 2016. He also received the KIISE/IEEE Young Computer Researcher Award in 2025 and the Songam Distinguished Research Award in 2022.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Session 1 · Talk 1: 나기현 (TBD) -->
+    <article class="talk tbd">
+      <img class="photo" src="figure/prof_KH-Na.png" alt="나기현 박사 / Dr. Kihyun Na" />
+      <div>
+        <span class="badge">Session 1 · Talk 1</span>
+        <div class="who">
+          <div class="name" data-lang-ko>나기현 박사</div>
+          <div class="name" data-lang-en>Dr. Kihyun Na</div>
+          <div class="affil" data-lang-ko>한동대학교</div>
+          <div class="affil" data-lang-en>Handong Global University</div>
+        </div>
+        <p class="tbd-note" data-lang-ko>발표 제목 및 초록은 추후 공지될 예정입니다.</p>
+        <p class="tbd-note" data-lang-en>Title and abstract to be announced.</p>
+      </div>
+    </article>
+
+    <!-- Session 1 · Talk 2: 홍참길 -->
+    <article class="talk">
+      <img class="photo" src="figure/prof_CG-Hong.png" alt="홍참길 교수 / Prof. Charmgil Hong" />
+      <div>
+        <span class="badge">Session 1 · Talk 2</span>
+        <div class="who">
+          <div class="name" data-lang-ko>홍참길 교수</div>
+          <div class="name" data-lang-en>Prof. Charmgil Hong</div>
+          <div class="affil" data-lang-ko>한동대학교</div>
+          <div class="affil" data-lang-en>Handong Global University · School of AI, Computer and Electrical Engineering</div>
+          <div class="ttitle">Advancing Multimodal Medical AI through Global Research Collaboration</div>
+        </div>
+        <div class="block">
+          <div class="label">Talk Overview</div>
+          <p>Multimodal medical AI has become an increasingly important research direction as clinical applications require the integration of diverse data sources, including medical images, electronic health records, physiological signals, and text. In this talk, I will share our three-year collaborative research experience with Prof. Yuyin Zhou at the University of California, Santa Cruz, supported by the IITP Global Research Support Program in Digital Fields. Each year, two Handong graduate students have visited the UCSC Computer Science Department as visiting researchers for four to six months. I will introduce the research outcomes from this collaboration, including papers, abstracts, domestic publications, and media coverage, with several results presented or submitted to top-tier international venues in medical AI, machine learning, and neuroscience. I will also discuss how this collaboration has contributed to student growth, research direction, and future opportunities in multimodal medical AI.</p>
+        </div>
+        <div class="block">
+          <div class="label">Bio</div>
+          <p>Charmgil Hong is an Associate Professor in the School of Artificial Intelligence, Computer and Electrical Engineering at Handong Global University. He received his Ph.D. in Computer Science from the University of Pittsburgh in 2017. His recent research focuses on multimodal and multi-source machine learning for complex real-world data, including time-series, image, video, and text data. His work connects anomaly and outlier detection, video understanding, large-scale video indexing, LLM-based discourse analysis, and AI-driven decision support, with applications in medical and industrial domains. His work has been recognized with the IEEE AVSS 2024 Best Paper Award, the AAAI Doctoral Consortium Grant, and travel grants from NSF, SIAM, and ICML. He currently serves as a technical advisor to several AI and healthcare technology companies, including Impactive AI, Claimark, AI Cloud, Domingo Research, and Herings.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Session 2 · Talk 1: 김동근 (TBD) -->
+    <article class="talk tbd">
+      <img class="photo" src="figure/prof_DK-Kim.png" alt="김동근 교수 / Prof. Dongkeun Kim" />
+      <div>
+        <span class="badge">Session 2 · Talk 1</span>
+        <div class="who">
+          <div class="name" data-lang-ko>김동근 교수</div>
+          <div class="name" data-lang-en>Prof. Dongkeun Kim</div>
+          <div class="affil" data-lang-ko>한동대학교</div>
+          <div class="affil" data-lang-en>Handong Global University</div>
+        </div>
+        <p class="tbd-note" data-lang-ko>발표 제목 및 초록은 추후 공지될 예정입니다.</p>
+        <p class="tbd-note" data-lang-en>Title and abstract to be announced.</p>
+      </div>
+    </article>
+
+    <!-- Session 2 · Talk 2: 최희열 (TBD) -->
+    <article class="talk tbd">
+      <img class="photo" src="figure/prof_HY-Choi.png" alt="최희열 교수 / Prof. Heeyoul Choi" />
+      <div>
+        <span class="badge">Session 2 · Talk 2</span>
+        <div class="who">
+          <div class="name" data-lang-ko>최희열 교수</div>
+          <div class="name" data-lang-en>Prof. Heeyoul Choi</div>
+          <div class="affil" data-lang-ko>한동대학교</div>
+          <div class="affil" data-lang-en>Handong Global University</div>
+        </div>
+        <p class="tbd-note" data-lang-ko>발표 제목 및 초록은 추후 공지될 예정입니다.</p>
+        <p class="tbd-note" data-lang-en>Title and abstract to be announced.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 장소 ============ -->
+<section id="venue">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-lang-ko>오시는 길</span>
+      <span class="tag" data-lang-en>Venue</span>
+      <h2 data-lang-ko>제주국제컨벤션센터</h2>
+      <h2 data-lang-en>ICC Jeju</h2>
+    </div>
+    <div class="venue">
+      <img class="photo" src="figure/ICC_JEJU_image.jpg" alt="제주국제컨벤션센터 / ICC Jeju" />
+      <div>
+        <img class="vlogo" src="figure/ICC_JEJU_logo.png" alt="ICC Jeju" />
+        <h3 data-lang-ko>제주국제컨벤션센터 (ICC Jeju) · 301B호</h3>
+        <h3 data-lang-en>International Convention Center Jeju · Room 301B</h3>
+        <p class="addr" data-lang-ko>제주특별자치도 서귀포시 중문관광로 224</p>
+        <p class="addr" data-lang-en>224 Jungmun Gwangwang-ro, Seogwipo-si, Jeju</p>
+        <p data-lang-ko><span class="dot"></span>제주국제공항에서 차량 약 50분</p>
+        <p data-lang-en><span class="dot"></span>About 50 min by car from Jeju Airport</p>
+        <p data-lang-ko><span class="dot"></span>중문관광단지 내 위치</p>
+        <p data-lang-en><span class="dot"></span>Located in Jungmun Resort Complex</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-title" data-lang-ko>제6회 한동 BK21 인공지능 워크샵</div>
+    <div class="ft-title" data-lang-en>The 6th Handong BK21 AI Workshop</div>
+    <div data-lang-ko>2026. 6. 24. · 제주국제컨벤션센터(ICC Jeju) 301B호 · 주관 한동대학교 BK21 인공지능사업단</div>
+    <div data-lang-en>June 24, 2026 · ICC Jeju, Room 301B · Hosted by Handong BK21 AI Education &amp; Research Group</div>
+    <div style="margin-top:10px;" data-lang-ko>문의 · </div>
+    <div style="margin-top:10px;" data-lang-en>Contact · </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'ko');
+    document.getElementById('btn-ko').classList.toggle('active', lang==='ko');
+    document.getElementById('btn-en').classList.toggle('active', lang==='en');
+    try{ localStorage.setItem('bk21-lang', lang); }catch(e){}
+  }
+  (function(){
+    var saved = 'ko';
+    try{ saved = localStorage.getItem('bk21-lang') || 'ko'; }catch(e){}
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>
