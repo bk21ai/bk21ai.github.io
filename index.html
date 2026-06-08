@@ -7,7 +7,7 @@
 <meta name="description" content="제6회 한동 BK21 인공지능 워크샵 — 2026. 6. 24. 제주국제컨벤션센터" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
 <style>
   :root{
     --ocean:#0487d9;       /* 제주 바다 */
@@ -163,13 +163,13 @@
     background:var(--basalt);color:#fff;font-weight:500;
     font-size:13px;letter-spacing:.05em;padding:14px 18px;text-align:left;
   }
-  tbody td{padding:16px 18px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top;}
+  tbody td{padding:16px 18px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top;color:#3f4650;}
   tbody tr:last-child td{border-bottom:0;}
-  td.time{white-space:nowrap;color:var(--ocean-2);font-weight:500;width:120px;}
+  td.time{white-space:nowrap;color:#046f9a;font-weight:600;width:120px;}
   td.title{font-weight:500;color:var(--ink);}
-  td.title small{display:block;font-weight:300;color:var(--muted);font-size:13.5px;margin-top:4px;}
-  td.speaker{color:var(--muted);width:230px;line-height:1.6;}
-  td.speaker small{color:var(--muted);font-size:12.5px;}
+  td.title small{display:block;font-weight:400;color:#555f6d;font-size:13.5px;margin-top:4px;}
+  td.speaker{color:#4a5360;width:230px;line-height:1.6;font-weight:400;}
+  td.speaker small{color:#5d6673;font-size:12.5px;font-weight:400;}
   td.speaker br{margin-bottom:6px;content:"";display:block;}
   tr.break td{background:#fff6ec;color:var(--tangerine-2);font-weight:500;text-align:center;}
   tr.cere td{background:#f4faff;}
@@ -199,7 +199,7 @@
     font-size:11px;letter-spacing:.14em;text-transform:uppercase;
     font-weight:700;color:var(--muted);margin-bottom:4px;
   }
-  .talk .block p{margin:0;font-size:14.5px;color:#4a4f57;}
+  .talk .block p{margin:0;font-size:14.5px;color:#3f4650;font-weight:300;}
   .talk .tbd-note{color:var(--muted);font-style:italic;font-size:14.5px;}
 
   /* ---------- Venue ---------- */
@@ -212,6 +212,15 @@
   .venue p{color:#4a4f57;margin:0 0 10px;}
   .venue .addr{font-weight:500;color:var(--ink);}
 
+  /* ---------- Event information ---------- */
+  .info-card{
+    background:var(--white);border:1px solid var(--line);
+    border-left:4px solid var(--ocean);border-radius:16px;
+    padding:28px 30px;margin-bottom:24px;
+    box-shadow:0 8px 24px rgba(20,40,60,.05);
+  }
+  .info-card p{margin:0;color:#4a4f57;font-size:16px;font-weight:400;}
+
   /* ---------- Footer ---------- */
   footer{
     background:var(--basalt);color:#cfd3da;text-align:center;
@@ -219,6 +228,7 @@
   }
   footer .ft-title{color:#fff;font-weight:700;font-size:16px;margin-bottom:8px;}
   footer a{color:var(--tangerine);text-decoration:none;}
+  footer .contact a{color:inherit;}
 
   .dot{display:inline-block;width:8px;height:8px;border-radius:50%;
     background:var(--tangerine);margin-right:8px;vertical-align:middle;}
@@ -246,7 +256,7 @@
 <!-- ============ HERO ============ -->
 <header class="hgu-bk-icon">
   <div class="wrap">
-    <div class="kicker" data-lang-ko>Handong BK21 · 인공지능 워크샵</div>
+    <div class="kicker" data-lang-ko>한동 BK21 · 인공지능 워크샵</div>
     <div class="kicker" data-lang-en>Handong BK21 · AI Workshop</div>
 
     <h1 data-lang-ko>제6회 한동 BK21 인공지능 워크샵</h1>
@@ -259,7 +269,7 @@
       <strong>Wed, June 24, 2026 · 13:00 – 16:00</strong> · ICC Jeju, Room 301B
     </div>
 
-    <div class="host" data-lang-ko>주관 · 한동대학교 BK21 인공지능사업단</div>
+    <div class="host" data-lang-ko>주관 · 한동대학교 BK21 인공지능 혁신인재 양성사업단</div>
     <div class="host" data-lang-en>Hosted by Handong Global University BK21 AI Education &amp; Research Group</div>
 
     <!-- hgu-bk-icon 일러스트 (제주 풍경) -->
@@ -284,17 +294,17 @@
 
     <div class="invite">
       <div data-lang-ko>
-        <p class="greet">제6회 한동대 BK21 인공지능 워크샵에 여러분을 초대합니다.</p>
-        <p>인공지능은 이미 우리 사회 전반의 혁신을 이끄는 핵심 기술로 자리 잡았으며, 최근에는 추론 능력을 갖춘 거대언어모델(Large Language Models, LLMs), 자율적으로 과업을 수행하는 Agentic AI, 그리고 물리 세계와 상호작용하는 Physical AI로 그 지평을 빠르게 넓혀가고 있습니다.</p>
-        <p>이러한 흐름 속에서 한동대 BK21 AI 혁신인재 양성사업단은 협력 기업 및 대학의 연구자분들, 그리고 학생 여러분께 AI의 최신 기술 동향과 산업계 활용 사례를 함께 나누고자 본 워크샵을 마련하였습니다. 본 워크샵에서는 한동대 BK21 AI 혁신인재 양성사업단 소속 교수님들께서 사업단을 통해 수행해 온 AI 연구 성과와 주요 기술 동향을 소개해 드리고, 이어서 선도 연구자 초청 강연과 산업계 리더 특강을 통해 학계와 산업 현장의 생생한 통찰을 함께 나누는 자리를 마련하였습니다.</p>
-        <p>참석하시는 모든 분들께 의미 있고 유익한 시간이 되리라 확신하며, 학계 및 산업계의 AI 연구자와 대학·대학원생 여러분의 많은 참여를 진심으로 바랍니다.</p>
+        <p class="greet">제6회 한동대학교 BK21 인공지능 워크샵에 여러분을 초대합니다.</p>
+        <p>인공지능은 이미 우리 사회 전반의 혁신을 이끄는 핵심 기술로 자리 잡았습니다. 특히 최근에는 추론 능력을 갖춘 거대언어모델(LLM), 스스로 과업을 수행하는 Agentic AI, 물리 세계와 상호작용하는 Physical AI 등으로 그 지평을 빠르게 넓혀가고 있습니다.</p>
+        <p>한동대학교 BK21 인공지능 혁신인재 양성사업단은 이러한 흐름 속에서 최신 연구 성과와 기술 동향을 함께 나누고자 본 워크샵을 마련하였습니다. 이번 워크샵에서는 사업단 소속 교수진이 그동안 수행해 온 AI 연구를 소개하고, 선도 연구자를 모신 기조강연을 통해 AI 연구의 최신 흐름과 학계의 통찰을 공유하고자 합니다.</p>
+        <p>함께하시는 모든 분께 의미 있고 유익한 시간이 되기를 바라며, 학계와 산업계의 AI 연구자, 그리고 대학생·대학원생 여러분의 많은 참여를 진심으로 환영합니다.</p>
         <p class="sign">— 한동대학교 BK21 인공지능사업단</p>
       </div>
       <div data-lang-en>
-        <p class="greet">We invite you to the 6th Handong BK21 AI Workshop.</p>
-        <p>Artificial intelligence has firmly established itself as a core technology driving innovation across society, and its frontiers are rapidly expanding — toward Large Language Models (LLMs) with reasoning capabilities, Agentic AI that autonomously carries out tasks, and Physical AI that interacts with the physical world.</p>
-        <p>Amid these developments, the Handong BK21 AI Innovative Talent Education &amp; Research Group has prepared this workshop to share the latest technological trends and industry use cases of AI with researchers from partner companies and universities, and with students. Professors of the group will first present the AI research achievements and major technological trends they have pursued through the program, followed by an invited keynote from a leading researcher and tech talks offering vivid insights from both academia and industry.</p>
-        <p>We are confident this will be a meaningful and rewarding time for everyone, and we sincerely welcome the participation of AI researchers in academia and industry, as well as undergraduate and graduate students.</p>
+        <p class="greet">We warmly invite you to the 6th Handong BK21 AI Workshop.</p>
+        <p>Artificial intelligence has firmly established itself as a core technology driving innovation across society. Its frontiers are now rapidly expanding toward Large Language Models (LLMs) with reasoning capabilities, Agentic AI that autonomously performs complex tasks, and Physical AI that interacts with the physical world.</p>
+        <p>Amid these developments, Handong Global University BK21 AI Education &amp; Research Group has organized this workshop to share recent research achievements and major technological trends in AI. Faculty members of the group will present their ongoing AI research, and an invited keynote by a leading researcher will offer timely perspectives from the forefront of AI research.</p>
+        <p>We hope this workshop will be a meaningful and rewarding opportunity for all participants, and we sincerely welcome AI researchers from academia and industry, as well as undergraduate and graduate students.</p>
         <p class="sign">— Handong Global University BK21 AI Education &amp; Research Group</p>
       </div>
     </div>
@@ -356,8 +366,8 @@
     </div>
 
     <div class="host-line">
-      <span data-lang-ko>주관 · <strong>한동대학교 BK21 인공지능사업단</strong></span>
-      <span data-lang-en>Hosted by <strong>Handong BK21 AI Education &amp; Research Group</strong></span>
+      <span data-lang-ko>주관 · <strong>한동대학교 BK21 인공지능 혁신인재 양성사업단</strong></span>
+      <span data-lang-en>Hosted by <strong>Handong Global University BK21 AI Education &amp; Research Group</strong></span>
     </div>
   </div>
 </section>
@@ -372,6 +382,11 @@
       <h2 data-lang-en>Schedule</h2>
       <p class="lead" data-lang-ko>2026. 6. 24. (수) 13:00 ~ 16:00 · 제주국제컨벤션센터(ICC Jeju) 301B호</p>
       <p class="lead" data-lang-en>Wed, June 24, 2026 · 13:00 – 16:00 · ICC Jeju, Room 301B</p>
+    </div>
+
+    <div class="info-card">
+      <p data-lang-ko>본 워크샵은 무료로 진행되며, 별도의 사전 신청 없이 참석하실 수 있습니다. 좌석은 선착순으로 제공됩니다.</p>
+      <p data-lang-en>This workshop is free of charge and open to participants without pre-registration. Seating is available on a first-come, first-served basis.</p>
     </div>
 
     <div class="sched">
@@ -406,11 +421,11 @@
             <td class="time">14:10 – 14:50</td>
             <td class="title">
               <span data-lang-ko>Tech Talks Session 1</span><span data-lang-en>Tech Talks Session 1</span>
-              <small>Talk 1 — <span data-lang-ko>(발표 제목 추후 공지)</span><span data-lang-en>(title TBA)</span></small>
+              <small>Talk 1 — Decouple, Don’t Denoise: Rethinking Conditioning in Diffusion Models - A Case Study in Virtual Try-On</small>
               <small>Talk 2 — Advancing Multimodal Medical AI through Global Research Collaboration</small>
             </td>
             <td class="speaker" data-lang-ko>나기현 박사 <small>한동대학교</small><br>홍참길 교수 <small>한동대학교</small></td>
-            <td class="speaker" data-lang-en>Dr. Kihyun Na <small>Handong</small><br>Prof. Charmgil Hong <small>Handong</small></td>
+            <td class="speaker" data-lang-en>Dr. Kihyun Na <small>HGU</small><br>Prof. Charmgil Hong <small>HGU</small></td>
           </tr>
           <tr class="break">
             <td class="time">14:50 – 15:10</td>
@@ -421,11 +436,11 @@
             <td class="time">15:10 – 16:00</td>
             <td class="title">
               <span data-lang-ko>Tech Talks Session 2</span><span data-lang-en>Tech Talks Session 2</span>
-              <small>Talk 1 — <span data-lang-ko>(발표 제목 추후 공지)</span><span data-lang-en>(title TBA)</span></small>
-              <small>Talk 2 — <span data-lang-ko>(발표 제목 추후 공지)</span><span data-lang-en>(title TBA)</span></small>
+              <small>Talk 1 — From Understanding Human Videos to Socially Intelligent Agents</small>
+              <small>Talk 2 — Sentence Segmentation and Named Entity Recognition in Literary Sinitic Text</small>
             </td>
             <td class="speaker" data-lang-ko>김동근 교수 <small>한동대학교</small><br>최희열 교수 <small>한동대학교</small></td>
-            <td class="speaker" data-lang-en>Prof. Dongkeun Kim <small>Handong</small><br>Prof. Heeyoul Choi <small>Handong</small></td>
+            <td class="speaker" data-lang-en>Prof. Dongkeun Kim <small>HGU</small><br>Prof. Heeyoul Choi <small>HGU</small></td>
           </tr>
           <tr class="cere">
             <td class="time">16:00</td>
@@ -463,7 +478,7 @@
         </div>
         <div class="block">
           <div class="label">Talk Overview</div>
-          <p>AI for complex networks supports a wide range of applications, including web search, recommendation, advertising, and fraud detection, across the web, online social networks, and e-commerce platforms. However, it also poses unique challenges due to the massive scale but limited number of such networks, as well as their structural properties, such as permutation invariance. In this seminar, I will present our recent research on AI for complex networks, focusing on hypergraphs that represent interconnected group interactions. The seminar will cover embedding, generation, and modeling of large-scale group interactions. I will also briefly discuss broader directions, including complex networks for AI and AI for complex systems beyond networks.</p>
+          <p>Talk Overview: AI for complex networks supports a wide range of applications, including web search, recommendation, advertising, and fraud detection, across the web, online social networks, and e-commerce platforms. However, it also poses unique challenges due to the massive scale but limited number of such networks, as well as their structural properties, such as permutation invariance. In this seminar, I will present our recent research on AI for complex networks, focusing on hypergraphs that represent interconnected group interactions. The seminar will cover embedding, generation, and modeling of large-scale group interactions. I will also briefly discuss broader directions, including complex networks for AI and AI for complex systems beyond networks.</p>
         </div>
         <div class="block">
           <div class="label">Bio</div>
@@ -482,9 +497,16 @@
           <div class="name" data-lang-en>Dr. Kihyun Na</div>
           <div class="affil" data-lang-ko>한동대학교</div>
           <div class="affil" data-lang-en>Handong Global University</div>
+          <div class="ttitle">Decouple, Don’t Denoise: Rethinking Conditioning in Diffusion Models - A Case Study in Virtual Try-On</div>
         </div>
-        <p class="tbd-note" data-lang-ko>발표 제목 및 초록은 추후 공지될 예정입니다.</p>
-        <p class="tbd-note" data-lang-en>Title and abstract to be announced.</p>
+        <div class="block">
+          <div class="label">Talk Overview</div>
+          <p>Conditional diffusion models often inject external information directly into the denoising process, but this design can blur the line between what the model should generate and what should merely serve as conditioning. In this talk, I examine this problem through diffusion-based virtual try-on, where the goal is to synthesize a person wearing a target garment. Recent dual-UNet methods achieve strong garment fidelity using a separate reference network, while simpler spatial-concatenation methods are more efficient but have struggled under full fine-tuning. I show that this failure stems from a conditioning–denoising conflict, in which the garment is treated both as a denoising target and as a conditioning signal. Building on this diagnosis, I introduce DeCo-VTON, a simple recipe that restores decoupling through Garment-Free Guidance, Decoupled Loss, and Clean Latent Anchoring. Without any architectural modification, DeCo-VTON enables effective full fine-tuning and reaches state-of-the-art performance among single-network methods at substantially lower computational cost.</p>
+        </div>
+        <div class="block">
+          <div class="label">Bio</div>
+          <p>Kihyun Na is a Research Professor in the BK21 AI Education &amp; Research Group at Handong Global University. He received his Ph.D. in Computer Science and Engineering from Handong Global University, where his dissertation focused on garment feature learning in diffusion-based virtual try-on. His research focuses on generative computer vision, diffusion models, image restoration, and efficient AI systems for complex real-world data. His recent work studies how conditioning mechanisms in diffusion models can be redesigned to improve controllability and computational efficiency. He has also worked on license plate image restoration and recognition, audio and speech processing, and AI-assisted research workflows, with a broader interest in building reproducible AI systems that support human understanding and decision-making.</p>
+        </div>
       </div>
     </article>
 
@@ -521,9 +543,16 @@
           <div class="name" data-lang-en>Prof. Dongkeun Kim</div>
           <div class="affil" data-lang-ko>한동대학교</div>
           <div class="affil" data-lang-en>Handong Global University</div>
+          <div class="ttitle">From Understanding Human Videos to Socially Intelligent Agents</div>
         </div>
-        <p class="tbd-note" data-lang-ko>발표 제목 및 초록은 추후 공지될 예정입니다.</p>
-        <p class="tbd-note" data-lang-en>Title and abstract to be announced.</p>
+        <div class="block">
+          <div class="label">Talk Overview</div>
+          <p>This talk presents a series of studies on understanding collective human behaviors in videos, spanning group activity recognition, group activity detection, and fine-grained social interaction detection. Understanding human collective behavior requires compositional reasoning over multiple levels - from individual body-part cues such as gaze, gesture, and facial expression, up to pairwise interactions and group-level dynamics. Ultimately, such understanding forms the foundation for building socially intelligent systems that can perceive and reason about human activities in the real world. Looking ahead, I will discuss two future directions. The first is multimodal social activity understanding, extending beyond visual cues to incorporate language and audio for richer scene interpretation. The second is learning from human videos for robotic manipulation, which leverages large-scale human data to teach robots dexterous skills, ultimately moving toward multi-agent collaboration in complex environments.</p>
+        </div>
+        <div class="block">
+          <div class="label">Bio</div>
+          <p>Dongkeun Kim received his Ph.D. in Computer Science and Engineering from Pohang University of Science and Technology (POSTECH) in 2025 under the supervision of Prof. Suha Kwak. He is currently an Assistant Professor at Handong Global University, School of Artificial Intelligence, Computer and Electrical Engineering. His research interests include computer vision, video understanding, and multimodal learning with a particular focus on group activity understanding and social activity analysis. He received the Best Paper Award (Gold Prize) at IPIU 2026.</p>
+        </div>
       </div>
     </article>
 
@@ -537,9 +566,16 @@
           <div class="name" data-lang-en>Prof. Heeyoul Choi</div>
           <div class="affil" data-lang-ko>한동대학교</div>
           <div class="affil" data-lang-en>Handong Global University</div>
+          <div class="ttitle">Sentence Segmentation and Named Entity Recognition in Literary Sinitic Text</div>
         </div>
-        <p class="tbd-note" data-lang-ko>발표 제목 및 초록은 추후 공지될 예정입니다.</p>
-        <p class="tbd-note" data-lang-en>Title and abstract to be announced.</p>
+        <div class="block">
+          <div class="label">Talk Overview</div>
+          <p>It is challenging to understand Literary Sinitic text from the Joseon dynasty, since there is a lack of explicit word separators, which creates significant semantic ambiguity. To address this, both sentence segmentation and named entity recognition (NER) are essential. We propose a Transformer-based analyzer that performs these two tasks simultaneously. Trained on a labeled corpus from the Seungjeongwon Ilgi, our model effectively segments sentences and identifies named entities, thereby significantly improving the understanding of sentence structure and overall context.</p>
+        </div>
+        <div class="block">
+          <div class="label">Bio</div>
+          <p>Heeyoul Choi received his B.S. and M.S. from Pohang University of Science and Technology (POSTECH), Korea, in 2002 and 2005, respectively, and his Ph.D. from Texas A&M University in 2010. He is a professor at Handong Global University. His research interests span machine learning, deep learning, and natural language processing.</p>
+        </div>
       </div>
     </article>
   </div>
@@ -555,7 +591,7 @@
       <h2 data-lang-en>ICC Jeju</h2>
     </div>
     <div class="venue">
-      <img class="photo" src="figure/ICC_JEJU_image.jpg" alt="제주국제컨벤션센터 / ICC Jeju" />
+      <img class="photo" src="figure/ICC_JEJU_image.png" alt="제주국제컨벤션센터 / ICC Jeju" />
       <div>
         <img class="vlogo" src="figure/ICC_JEJU_logo.png" alt="ICC Jeju" />
         <h3 data-lang-ko>제주국제컨벤션센터 (ICC Jeju) · 301B호</h3>
@@ -576,10 +612,18 @@
   <div class="wrap">
     <div class="ft-title" data-lang-ko>제6회 한동 BK21 인공지능 워크샵</div>
     <div class="ft-title" data-lang-en>The 6th Handong BK21 AI Workshop</div>
-    <div data-lang-ko>2026. 6. 24. · 제주국제컨벤션센터(ICC Jeju) 301B호 · 주관 한동대학교 BK21 인공지능사업단</div>
-    <div data-lang-en>June 24, 2026 · ICC Jeju, Room 301B · Hosted by Handong BK21 AI Education &amp; Research Group</div>
-    <div style="margin-top:10px;" data-lang-ko>문의 · </div>
-    <div style="margin-top:10px;" data-lang-en>Contact · </div>
+    <div data-lang-ko>2026. 6. 24. · 제주국제컨벤션센터(ICC Jeju) 301B호 · 주관 한동대학교 BK21 인공지능 혁신인재 양성사업단</div>
+    <div data-lang-en>June 24, 2026 · ICC Jeju, Room 301B · Hosted by Handong Global University BK21 AI Education &amp; Research Group</div>
+    <div class="contact" style="margin-top:10px;" data-lang-ko>
+      문의  · 
+      <a href="mailto:khna@handong.edu">khna@handong.edu</a> · 
+      <a href="tel:+82542603150">054-260-3150</a>
+    </div>
+    <div class="contact" style="margin-top:10px;" data-lang-en>
+      Contact  · 
+      <a href="mailto:khna@handong.edu">khna@handong.edu</a>  · 
+      <a href="tel:+82542603150">054-260-3150</a>
+    </div>
   </div>
 </footer>
 
