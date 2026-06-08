@@ -166,11 +166,13 @@
   tbody td{padding:16px 18px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top;color:#3f4650;}
   tbody tr:last-child td{border-bottom:0;}
   td.time{white-space:nowrap;color:#046f9a;font-weight:600;width:120px;}
+  td.time[rowspan]{vertical-align:middle;}
   td.title{font-weight:500;color:var(--ink);}
   td.title small{display:block;font-weight:400;color:#555f6d;font-size:13.5px;margin-top:4px;}
   td.speaker{color:#4a5360;width:230px;line-height:1.6;font-weight:400;}
   td.speaker small{color:#5d6673;font-size:12.5px;font-weight:400;}
-  td.speaker br{margin-bottom:6px;content:"";display:block;}
+  tr.session td{background:#f8fbfd;color:var(--ocean-2);font-weight:700;}
+  td.session-title{letter-spacing:.02em;}
   tr.break td{background:#fff6ec;color:var(--tangerine-2);font-weight:500;text-align:center;}
   tr.cere td{background:#f4faff;}
 
@@ -288,8 +290,8 @@
     <div class="sec-head">
       <span class="tag" data-lang-ko>초대의 말씀 · 프로그램 소개</span>
       <span class="tag" data-lang-en>Invitation</span>
-      <h2 data-lang-ko>제주에서 열리는 인공지능의 만남</h2>
-      <h2 data-lang-en>An AI Gathering on Jeju Island</h2>
+      <h2 data-lang-ko>제주에서 열리는 인공지능과의 만남</h2>
+      <h2 data-lang-en>Meet AI on Jeju Island</h2>
     </div>
 
     <div class="invite">
@@ -417,30 +419,44 @@
             <td colspan="2" data-lang-ko>휴식</td>
             <td colspan="2" data-lang-en>Break</td>
           </tr>
+          <tr class="session">
+            <td class="time" rowspan="3">14:10 – 15:00</td>
+            <td class="session-title" colspan="2" data-lang-ko>Tech Talks Session 1</td>
+            <td class="session-title" colspan="2" data-lang-en>Tech Talks Session 1</td>
+          </tr>
           <tr>
-            <td class="time">14:10 – 14:50</td>
-            <td class="title">
-              <span data-lang-ko>Tech Talks Session 1</span><span data-lang-en>Tech Talks Session 1</span>
-              <small>Talk 1 — Decouple, Don’t Denoise: Rethinking Conditioning in Diffusion Models - A Case Study in Virtual Try-On</small>
-              <small>Talk 2 — Advancing Multimodal Medical AI through Global Research Collaboration</small>
-            </td>
-            <td class="speaker" data-lang-ko>나기현 박사 <small>한동대학교</small><br>홍참길 교수 <small>한동대학교</small></td>
-            <td class="speaker" data-lang-en>Dr. Kihyun Na <small>HGU</small><br>Prof. Charmgil Hong <small>HGU</small></td>
+            <td class="title" data-lang-ko>Talk 1 — Decouple, Don’t Denoise: Rethinking Conditioning in Diffusion Models - A Case Study in Virtual Try-On</td>
+            <td class="title" data-lang-en>Talk 1 — Decouple, Don’t Denoise: Rethinking Conditioning in Diffusion Models - A Case Study in Virtual Try-On</td>
+            <td class="speaker" data-lang-ko>나기현 박사 <small>한동대학교</small></td>
+            <td class="speaker" data-lang-en>Dr. Kihyun Na <small>HGU</small></td>
+          </tr>
+          <tr>
+            <td class="title" data-lang-ko>Talk 2 — Advancing Multimodal Medical AI through Global Research Collaboration</td>
+            <td class="title" data-lang-en>Talk 2 — Advancing Multimodal Medical AI through Global Research Collaboration</td>
+            <td class="speaker" data-lang-ko>홍참길 교수 <small>한동대학교</small></td>
+            <td class="speaker" data-lang-en>Prof. Charmgil Hong <small>HGU</small></td>
           </tr>
           <tr class="break">
-            <td class="time">14:50 – 15:10</td>
+            <td class="time">15:00 – 15:10</td>
             <td colspan="2" data-lang-ko>휴식</td>
             <td colspan="2" data-lang-en>Break</td>
           </tr>
+          <tr class="session">
+            <td class="time" rowspan="3">15:10 – 16:00</td>
+            <td class="session-title" colspan="2" data-lang-ko>Tech Talks Session 2</td>
+            <td class="session-title" colspan="2" data-lang-en>Tech Talks Session 2</td>
+          </tr>
           <tr>
-            <td class="time">15:10 – 16:00</td>
-            <td class="title">
-              <span data-lang-ko>Tech Talks Session 2</span><span data-lang-en>Tech Talks Session 2</span>
-              <small>Talk 1 — From Understanding Human Videos to Socially Intelligent Agents</small>
-              <small>Talk 2 — Sentence Segmentation and Named Entity Recognition in Literary Sinitic Text</small>
-            </td>
-            <td class="speaker" data-lang-ko>김동근 교수 <small>한동대학교</small><br>최희열 교수 <small>한동대학교</small></td>
-            <td class="speaker" data-lang-en>Prof. Dongkeun Kim <small>HGU</small><br>Prof. Heeyoul Choi <small>HGU</small></td>
+            <td class="title" data-lang-ko>Talk 1 — From Understanding Human Videos to Socially Intelligent Agents</td>
+            <td class="title" data-lang-en>Talk 1 — From Understanding Human Videos to Socially Intelligent Agents</td>
+            <td class="speaker" data-lang-ko>김동근 교수 <small>한동대학교</small></td>
+            <td class="speaker" data-lang-en>Prof. Dongkeun Kim <small>HGU</small></td>
+          </tr>
+          <tr>
+            <td class="title" data-lang-ko>Talk 2 — Sentence Segmentation and Named Entity Recognition in Literary Sinitic Text</td>
+            <td class="title" data-lang-en>Talk 2 — Sentence Segmentation and Named Entity Recognition in Literary Sinitic Text</td>
+            <td class="speaker" data-lang-ko>최희열 교수 <small>한동대학교</small></td>
+            <td class="speaker" data-lang-en>Prof. Heeyoul Choi <small>HGU</small></td>
           </tr>
           <tr class="cere">
             <td class="time">16:00</td>
@@ -487,7 +503,7 @@
       </div>
     </article>
 
-    <!-- Session 1 · Talk 1: 나기현 (TBD) -->
+    <!-- Session 1 · Talk 1: 나기현 -->
     <article class="talk tbd">
       <img class="photo" src="figure/prof_KH-Na.png" alt="나기현 박사 / Dr. Kihyun Na" />
       <div>
@@ -533,7 +549,7 @@
       </div>
     </article>
 
-    <!-- Session 2 · Talk 1: 김동근 (TBD) -->
+    <!-- Session 2 · Talk 1: 김동근 -->
     <article class="talk tbd">
       <img class="photo" src="figure/prof_DK-Kim.png" alt="김동근 교수 / Prof. Dongkeun Kim" />
       <div>
@@ -556,7 +572,6 @@
       </div>
     </article>
 
-    <!-- Session 2 · Talk 2: 최희열 (TBD) -->
     <article class="talk tbd">
       <img class="photo" src="figure/prof_HY-Choi.png" alt="최희열 교수 / Prof. Heeyoul Choi" />
       <div>
